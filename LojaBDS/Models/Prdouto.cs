@@ -5,11 +5,11 @@ namespace LojaBDS.Models
     public class Prdouto
     {
 
-        public int IdProduto { get; set; }
-        public string NomeProduto { get; set; }
-        public string DescricaoProduto { get; set; }
-        public decimal PrecoProduto { get; set; }
-        public int QuantidadeProduto { get; set; }
+        public int idProduto { get; set; }
+        public string nomeProduto { get; set; }
+        public string descricaoProduto { get; set; }
+        public decimal precoProduto { get; set; }
+        public int quantidadeProduto { get; set; }
 
     }
 }
