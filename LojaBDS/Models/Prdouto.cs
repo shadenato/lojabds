@@ -2,7 +2,7 @@
 
 namespace LojaBDS.Models
 {
-    public class Prdouto
+    public class Produto
     {
 
         public int idProduto { get; set; }
