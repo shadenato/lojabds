@@ -33,7 +33,7 @@ namespace LojaBDS.Repositorio
                 using (var conexao = new MySqlConnection(_conexaoMySQL))
                 {
                     conexao.Open();
-                    MySqlCommand cmd = new MySqlCommand("Update cliente set nomeProduto=@nome, descricaoProduto=@descricao, precoProduto=@preco, quantidadeProduto=@quantidade" + " where idProduto=@id ", conexao);
+                    MySqlCommand cmd = new MySqlCommand("Update produto set nomeProduto=@nome, descricaoProduto=@descricao, precoProduto=@preco, quantidadeProduto=@quantidade" + " where idProduto=@id ", conexao);
                     cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = produto.idProduto;
                     cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = produto.nomeProduto;
                     cmd.Parameters.Add("@descricao", MySqlDbType.VarChar).Value = produto.descricaoProduto;
