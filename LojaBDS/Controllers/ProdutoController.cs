@@ -31,12 +31,12 @@ namespace LojaBDS.Controllers
         public IActionResult CadastrarProduto(Produto produto)
         {
 
-            _produtoRepositorio.Cadastrar(produto);
+            _produtoRepositorio.CadastrarProduto(produto);
 
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult EditarProduto(int id)
+        public IActionResult ObterProduto(int id)
         {
             var produto = _produtoRepositorio.ObterProduto(id);
 

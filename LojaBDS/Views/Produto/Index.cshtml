@@ -1,0 +1,54 @@
+﻿@model IEnumerable<LojaBDS.Models.Produto>
+
+<p>
+    <a asp-controller="Produto" asp-action="CadastrarProduto">Cadastra Produto</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomeProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descricaoProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precoProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.quantidadeProduto)
+            </th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nomeProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descricaoProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.precoProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.quantidadeProduto)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Atualizar", new { id = item.idProduto }) |
+                    @Html.ActionLink("Excluir", "Excluir", new { id = item.idProduto },
+                             new { onclick = "return confirm('Deseja realmente Excluir este item?');" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
