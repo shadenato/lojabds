@@ -44,8 +44,8 @@
                     @Html.DisplayFor(modelItem => item.quantidadeProduto)
                 </td>
                 <td>
-                    @Html.ActionLink("Editar", "Atualizar", new { id = item.idProduto }) |
-                    @Html.ActionLink("Excluir", "Excluir", new { id = item.idProduto },
+                    @Html.ActionLink("Editar", "EditarProduto", new { id = item.idProduto }) |
+                    @Html.ActionLink("Excluir", "ExcluirProduto", new { id = item.idProduto },
                              new { onclick = "return confirm('Deseja realmente Excluir este item?');" })
                 </td>
             </tr>

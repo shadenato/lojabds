@@ -8,7 +8,7 @@ namespace LojaBDS.Controllers
 {
     public class ProdutoController : Controller
     {
-        private readonly ProdutoController _produtoRepositorio;
+        private readonly ProdutoRepositorio _produtoRepositorio;
 
 
 
@@ -31,12 +31,12 @@ namespace LojaBDS.Controllers
         public IActionResult CadastrarProduto(Produto produto)
         {
 
-            _produtoRepositorio.CadastrarProduto(produto);
+            _produtoRepositorio.Cadastrar(produto);
 
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult ObterProduto(int id)
+        public IActionResult EditarProduto(int id)
         {
             var produto = _produtoRepositorio.ObterProduto(id);
 
@@ -50,7 +50,7 @@ namespace LojaBDS.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken] 
-        public IActionResult Atualizar(int id, [Bind("idProduto, nomeProduto, descricaoProduto, precoProduto, quantidadeProduto")] Produto produto)
+        public IActionResult EditarProduto(int id, [Bind("idProduto, nomeProduto, descricaoProduto, precoProduto, quantidadeProduto")] Produto produto)
         {
             if (id != produto.idProduto)
             {
@@ -74,7 +74,7 @@ namespace LojaBDS.Controllers
             return View(produto);
         }
 
-        public IActionResult Excluir(int id)
+        public IActionResult ExcluirProduto(int id)
         {
             _produtoRepositorio.Excluir(id);
             return RedirectToAction(nameof(Index));
